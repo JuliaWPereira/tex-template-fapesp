@@ -1,0 +1,84 @@
+%% Modelo de Relatório Fapesp
+
+%% Tipo de documento
+\documentclass[
+    12pt,
+    openright, 
+    a4paper,
+    english,
+    brazil,
+    article
+]{abntex2}
+
+%% Pacotes utilizados
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsthm,amssymb,amsmath}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{float}
+\usepackage[left=3.3cm,right=3.3cm]{geometry}
+\usepackage[brazil]{babel}
+\usepackage{abntex2cite} % Citações ABNT
+    \citebrackets[]
+\usepackage{indentfirst}
+\usepackage{calrsfs}
+
+%% Redefinições e novos comandos
+\renewcommand{\baselinestretch}{1.5}
+\newcommand{\doublesignature}[3][Júlia Wotzasek Pereira]{
+    \parbox{\textwidth}{
+        \vspace{2cm}
+        \parbox{7cm}{
+            \centering
+            \rule{6cm}{1pt}\\
+            #1
+        }
+        \hfill
+        \parbox{7cm}{
+            \centering
+            \rule{6cm}{1pt}\\
+            #2
+        }
+    }
+}
+\newcommand{\eqdef}{\overset{\mathrm{def}}{=\joinrel=}}
+
+%% Definições matemáticas
+\newtheorem{thm}{Teorema}[section]
+\newtheorem{lemma}[thm]{Lema}
+\newtheorem{prop}[thm]{Proposição}
+\newtheorem{corl}[thm]{Corolário}
+\newtheorem{conj}[thm]{Conjectura}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definição}
+\newtheorem{exmp}[thm]{Exemplo}
+\newtheorem{obs}[thm]{Observação}
+
+%% Definição do Título do Projeto
+\title{Estruturas Algébricas em Heranças Genéticas}
+
+%% Início do Documento
+\begin{document}
+%% Parte A - Capa e Resumo
+\clearpage
+\pagestyle{empty}
+\input{secoes/A_introducao/1_capa.tex}
+\clearpage
+\pagestyle{plain}
+\pagenumbering{arabic}
+\input{secoes/A_introducao/2_resumo_projeto.tex}
+
+%% Parte B - Desenvolvimento
+\clearpage
+\input{secoes/B_desenvolvimento/3_desenvolvimento.tex}
+
+%% Parte C - Conclusão
+\clearpage
+\input{secoes/C_conclusao/conclusao.tex}
+
+%% Parte D - Referências
+\newpage
+\bibliography{referencias}
+\end{document}
